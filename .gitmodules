@@ -1,0 +1,6 @@
+[submodule "HT1632"]
+	path = HT1632
+	url = https://github.com/SeanVel/HT1632.git
+[submodule "Adafruit_NFCShield_I2C"]
+	path = Adafruit_NFCShield_I2C
+	url = https://github.com/SeanVel/Adafruit_NFCShield_I2C.git
