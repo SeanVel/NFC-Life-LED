@@ -32,8 +32,11 @@ code will run properly.
 
 # Software Details
 The lifegame library created for this project implements a game of life parameterized by the number of rows and columns, so it can easily be expanded to larger sizes that fit within the memory of the Arduino. It also employs a toroidal structure, meaning patterns that move off one edge of the game wrap around to the opposite edge. The standard rules of the game of life are applied to compute successive generations.
+
 The Adafruit library for the HT1632 driven LED matrix is used as-is to individually set and clear LEDs in the display.
-While the Adafruit library for the PN532 based NFC shield was written to interact with the MiFare standard of NFC tags, it provided a starting point for how to send packets to the PN532 controller and detect tags with its 'InListPassiveTarget' instruction. Details for modifying packets sent with the 'InListPassiveTarget' instruction to detect FeliCa tags were found in the [PN532 User Manual](http://www.adafruit.com/datasheets/pn532um.pdf). The [FeliCa Card User's Manual](http://www.proxmark.org/files/Documents/13.56%20MHz%20-%20Felica/card_usersmanual_2.0.pdf) was consulted to determine the structure of packets to send to FeliCa tags and interpret the poll response from them.
+
+While the Adafruit library for the PN532 based NFC shield was written to interact with the MiFare standard of NFC tags, it provided a starting point for how to send packets to the PN532 controller and detect tags with its `InListPassiveTarget` instruction. Details for modifying packets sent with the `InListPassiveTarget` instruction to detect FeliCa tags were found in the [PN532 User Manual](http://www.adafruit.com/datasheets/pn532um.pdf). The [FeliCa Card User's Manual](http://www.proxmark.org/files/Documents/13.56%20MHz%20-%20Felica/card_usersmanual_2.0.pdf) was consulted to determine the structure of packets to send to FeliCa tags and interpret the poll response from them.
+
 In the main Arduino program, the NFC shield and the LED display are both initialized, and a game of life is instantiated fitting the size of the LED display. In its loop, cells in the game are brought to life based on any NFC UIDs detected. The display is updated, and the next generation of the game is computed before restarting the loop.
 
 ## Using GIT
